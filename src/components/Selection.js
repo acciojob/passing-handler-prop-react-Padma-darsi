@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from "react";
 
-const Selection = ({ selectedColor }) => {
-    const [boxColor, setBoxColor] = useState('');
+const Selection = (props) => {
+  const { applyColor } = props;
+  const [selectionStyle, updateSelectionStyle] = useState({ background: "" });
 
-    useEffect(() => {
-        setBoxColor(selectedColor);
-    }, [selectedColor]);
-
-    return (
-        <div>
-            <div className="fix-box" style={{ backgroundColor: boxColor }}>Box 1</div>
-            <div className="fix-box" style={{ backgroundColor: boxColor }}>Box 2</div>
-            <div className="fix-box" style={{ backgroundColor: boxColor }}>Box 3</div>
-        </div>
-    );
+  return (
+    <div
+      className="fix-box"
+      onClick={() => applyColor(updateSelectionStyle)} // ✅ pass handler
+      style={selectionStyle} // ✅ apply selected color
+    >
+      <h2 className="subheading">Selection</h2>
+    </div>
+  );
 };
 
 export default Selection;
+
 
