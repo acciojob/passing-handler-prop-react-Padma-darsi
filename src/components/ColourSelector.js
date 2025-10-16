@@ -6,14 +6,14 @@ const ColourSelector = (props) => {
 
   return (
     <button
-      className={classname}  // ✅ classname should come here
+      className={classname}
       onClick={() => selectNextBackground({ background: background })}
     >
-      {label}  {/* ✅ label should come here */}
+      {label}
     </button>
   );
 };
 
-export default ColourSelector;       
+export default ColourSelector;
 
 
