@@ -7,8 +7,8 @@ const Selection = (props) => {
   return (
     <div
       className="fix-box"
-      onClick={() => applyColor(updateSelectionStyle)} // ✅ pass handler
-      style={selectionStyle} // ✅ apply selected color
+      onClick={() => applyColor(updateSelectionStyle)}
+      style={selectionStyle}
     >
       <h2 className="subheading">Selection</h2>
     </div>
@@ -16,5 +16,3 @@ const Selection = (props) => {
 };
 
 export default Selection;
-
-
