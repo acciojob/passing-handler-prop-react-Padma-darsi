@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const Selection = ({ applyColor }) => {
-  const [selectionStyle, updateSelectionStyle] = useState({ background: "" }); // object
+const Selection = ({ applyColor, selectedColor }) => {
+  const [bgColor, setBgColor] = useState("");
+
+  useEffect(() => {
+    setBgColor(selectedColor);
+  }, [selectedColor]);
 
   return (
     <div
       className="fix-box"
-      onClick={() => applyColor(updateSelectionStyle)} // applyColor will pass an object
-      style={selectionStyle} // MUST be an object
-    >
-      <h2 className="subheading">Selection</h2>
-    </div>
+      style={{
+        width: "100px",
+        height: "100px",
+        backgroundColor: bgColor,
+        margin: "10px",
+        border: "2px solid black",
+      }}
+    ></div>
   );
 };
 
 export default Selection;
+
 
